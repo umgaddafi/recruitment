@@ -1,0 +1,367 @@
+
+> dev
+> vite --host 127.0.0.1 --port 5173
+
+(node:2488110) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+  VITE v7.3.5  ready in 182 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+3:18:44 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:18:44 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:18:44 PM [vite] (client) page reload src/App.jsx
+3:18:58 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:18:58 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:18:58 PM [vite] (client) page reload src/App.jsx
+3:19:15 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:19:15 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:19:15 PM [vite] (client) page reload src/App.jsx
+3:19:48 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:19:48 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:19:48 PM [vite] (client) page reload src/App.jsx
+3:20:41 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:20:41 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:20:41 PM [vite] (client) page reload src/App.jsx
+3:20:54 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:20:54 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:20:54 PM [vite] (client) page reload src/App.jsx
+3:21:22 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:21:22 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:21:22 PM [vite] (client) page reload src/App.jsx
+3:21:45 PM [vite] (client) hmr update /src/app.css
+3:30:44 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:30:44 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:30:44 PM [vite] (client) page reload src/App.jsx
+3:31:10 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:31:10 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:31:10 PM [vite] (client) page reload src/App.jsx
+3:31:17 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:31:17 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:31:17 PM [vite] (client) page reload src/App.jsx
+3:31:37 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:31:37 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:31:37 PM [vite] (client) page reload src/App.jsx
+3:31:54 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:31:54 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:31:54 PM [vite] (client) page reload src/App.jsx
+3:32:16 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:32:16 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:32:16 PM [vite] (client) page reload src/App.jsx
+3:32:25 PM [vite] (client) hmr update /src/app.css
+4:31:11 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:31:11 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:31:11 PM [vite] (client) page reload src/App.jsx
+4:32:10 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:32:11 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:32:11 PM [vite] (client) page reload src/App.jsx
+4:32:26 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:32:27 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:32:27 PM [vite] (client) page reload src/App.jsx
+4:32:53 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:32:53 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:32:53 PM [vite] (client) page reload src/App.jsx
+4:33:11 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:33:12 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:33:12 PM [vite] (client) page reload src/App.jsx
+4:33:33 PM [vite] (client) hmr update /src/app.css
+4:35:24 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:35:24 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:35:24 PM [vite] (client) page reload src/App.jsx
+4:39:14 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:39:14 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:39:14 PM [vite] (client) page reload src/App.jsx
+4:40:08 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:40:08 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:40:08 PM [vite] (client) page reload src/App.jsx
+4:40:26 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:40:27 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:40:27 PM [vite] (client) page reload src/App.jsx
+4:40:44 PM [vite] (client) hmr update /src/app.css
+4:42:14 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:42:14 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:42:14 PM [vite] (client) page reload src/App.jsx
+4:42:25 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:42:25 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:42:25 PM [vite] (client) page reload src/App.jsx
+4:42:49 PM [vite] (client) hmr update /src/app.css
+4:43:07 PM [vite] (client) hmr update /src/app.css
+5:07:59 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:07:59 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:07:59 PM [vite] (client) page reload src/App.jsx
+5:08:15 PM [vite] (client) hmr update /src/app.css
+5:09:25 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:09:25 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:09:25 PM [vite] (client) page reload src/App.jsx
+5:30:21 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:30:21 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:30:21 PM [vite] (client) page reload src/App.jsx
+5:30:37 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:30:37 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:30:37 PM [vite] (client) page reload src/App.jsx
+5:31:04 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:31:05 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:31:05 PM [vite] (client) page reload src/App.jsx
+5:31:26 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:31:26 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:31:26 PM [vite] (client) page reload src/App.jsx
+5:31:51 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:31:51 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:31:51 PM [vite] (client) page reload src/App.jsx
+5:32:02 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:32:03 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:32:03 PM [vite] (client) page reload src/App.jsx
+5:33:48 PM [vite] (client) hmr update /src/app.css
+5:34:13 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:34:13 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:34:13 PM [vite] (client) page reload src/App.jsx
+4:04:42 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:04:42 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:04:42 AM [vite] (client) page reload src/App.jsx
+4:04:53 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:04:53 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:04:53 AM [vite] (client) page reload src/App.jsx
+4:05:30 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:05:30 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:05:30 AM [vite] (client) page reload src/App.jsx
+4:06:00 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:06:00 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:06:00 AM [vite] (client) page reload src/App.jsx
+4:06:23 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:06:23 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:06:23 AM [vite] (client) page reload src/App.jsx
+4:07:10 AM [vite] (client) hmr update /src/app.css
+4:07:54 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:07:54 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:07:54 AM [vite] (client) page reload src/App.jsx
+4:10:16 AM [vite] (client) hmr update /src/app.css
+4:10:59 AM [vite] (client) hmr update /src/app.css
+4:13:58 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:13:59 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:13:59 AM [vite] (client) page reload src/App.jsx
+4:14:08 AM [vite] (client) hmr update /src/app.css
+4:19:33 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:19:33 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:19:33 AM [vite] (client) page reload src/App.jsx
+4:19:57 AM [vite] (client) hmr update /src/app.css
+4:21:57 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:21:57 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:21:57 AM [vite] (client) page reload src/App.jsx
+4:22:03 AM [vite] (client) page reload index.html
+4:26:38 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:26:38 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:26:38 AM [vite] (client) page reload src/App.jsx
+4:27:03 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:27:03 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:27:03 AM [vite] (client) page reload src/App.jsx
+4:27:21 AM [vite] (client) page reload index.html
+4:28:49 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:28:50 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:28:50 AM [vite] (client) page reload src/App.jsx
+4:29:03 AM [vite] (client) hmr update /src/app.css
+4:29:18 AM [vite] (client) hmr update /src/app.css
+4:50:07 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:50:07 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:50:07 AM [vite] (client) page reload src/App.jsx
+4:50:20 AM [vite] (client) hmr update /src/app.css
+4:57:10 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:57:11 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:57:11 AM [vite] (client) page reload src/App.jsx
+4:57:18 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:57:19 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:57:19 AM [vite] (client) page reload src/App.jsx
+5:09:37 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:09:37 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:09:37 AM [vite] (client) page reload src/App.jsx
+5:09:45 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:09:45 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:09:45 AM [vite] (client) page reload src/App.jsx
+5:10:03 AM [vite] (client) hmr update /src/app.css
+5:17:21 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:17:22 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:17:22 AM [vite] (client) page reload src/App.jsx
+5:19:36 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:19:36 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:19:36 AM [vite] (client) page reload src/App.jsx
+5:24:35 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:24:35 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:24:35 AM [vite] (client) page reload src/App.jsx
+5:29:24 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:29:24 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:29:24 AM [vite] (client) page reload src/App.jsx
+5:29:49 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:29:49 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:29:49 AM [vite] (client) page reload src/App.jsx
+5:30:21 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:30:21 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:30:21 AM [vite] (client) page reload src/App.jsx
+5:30:31 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:30:32 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:30:32 AM [vite] (client) page reload src/App.jsx
+5:32:17 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:32:18 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:32:18 AM [vite] (client) page reload src/App.jsx
+5:32:44 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:32:44 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:32:44 AM [vite] (client) page reload src/App.jsx
+5:33:06 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:33:06 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:33:06 AM [vite] (client) page reload src/App.jsx
+5:33:26 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:33:26 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:33:26 AM [vite] (client) page reload src/App.jsx
+5:33:33 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:33:33 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:33:33 AM [vite] (client) page reload src/App.jsx
+5:34:12 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+5:34:12 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+5:34:12 AM [vite] (client) page reload src/App.jsx
+6:36:54 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:36:54 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:36:54 AM [vite] (client) page reload src/App.jsx
+9:13:22 AM [vite] (client) hmr update /src/context/AuthContext.jsx, /src/app.css
+9:13:22 AM [vite] (client) hmr invalidate /src/context/AuthContext.jsx Could not Fast Refresh ("useAuth" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:13:22 AM [vite] (client) hmr update /src/App.jsx
+9:13:22 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:13:22 AM [vite] (client) page reload src/App.jsx
+9:13:43 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:13:43 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:13:43 AM [vite] (client) page reload src/App.jsx
+9:13:58 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:13:59 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:13:59 AM [vite] (client) page reload src/App.jsx
+9:18:28 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:18:29 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:18:29 AM [vite] (client) page reload src/App.jsx
+9:18:37 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:18:37 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:18:37 AM [vite] (client) page reload src/App.jsx
+9:18:47 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:18:48 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:18:48 AM [vite] (client) page reload src/App.jsx
+9:19:01 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:19:02 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:19:02 AM [vite] (client) page reload src/App.jsx
+9:19:31 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:19:31 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:19:31 AM [vite] (client) page reload src/App.jsx
+9:19:38 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:19:38 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:19:38 AM [vite] (client) page reload src/App.jsx
+9:20:15 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+9:20:16 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:20:16 AM [vite] (client) page reload src/App.jsx
+3:32:40 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:32:40 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:32:40 PM [vite] (client) page reload src/App.jsx
+3:33:01 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:33:01 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:33:01 PM [vite] (client) page reload src/App.jsx
+3:33:12 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:33:12 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:33:12 PM [vite] (client) page reload src/App.jsx
+3:33:38 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:33:38 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:33:38 PM [vite] (client) page reload src/App.jsx
+3:33:52 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:33:52 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:33:52 PM [vite] (client) page reload src/App.jsx
+3:34:15 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:34:16 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:34:16 PM [vite] (client) page reload src/App.jsx
+3:34:25 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:34:25 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:34:25 PM [vite] (client) page reload src/App.jsx
+6:25:39 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:25:40 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:25:42 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:25:44 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:25:45 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:25:48 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:36:44 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:36:58 PM [vite] (client) hmr update /src/app.css
+6:37:08 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:49:47 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:49:47 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:49:47 PM [vite] (client) page reload src/App.jsx
+6:49:55 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:49:55 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:49:55 PM [vite] (client) page reload src/App.jsx
+6:50:08 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:50:08 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:50:08 PM [vite] (client) page reload src/App.jsx
+6:50:20 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:50:20 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:50:20 PM [vite] (client) page reload src/App.jsx
+6:50:30 PM [vite] (client) hmr update /src/app.css
+6:50:59 PM [vite] (client) hmr update /src/app.css
+6:51:40 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:51:41 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:51:41 PM [vite] (client) page reload src/App.jsx
+6:51:50 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:51:50 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:51:50 PM [vite] (client) page reload src/App.jsx
+6:54:50 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:54:50 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:54:50 PM [vite] (client) page reload src/App.jsx
+6:57:53 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:57:53 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:57:53 PM [vite] (client) page reload src/App.jsx
+6:58:08 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:58:08 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:58:08 PM [vite] (client) page reload src/App.jsx
+6:58:29 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:58:29 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:58:29 PM [vite] (client) page reload src/App.jsx
+6:58:43 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+6:58:43 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+6:58:43 PM [vite] (client) page reload src/App.jsx
+6:59:06 PM [vite] (client) hmr update /src/app.css
+7:01:51 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+7:01:51 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:01:51 PM [vite] (client) page reload src/App.jsx
+7:02:04 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+7:02:04 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:02:04 PM [vite] (client) page reload src/App.jsx
+7:02:13 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+7:02:13 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:02:13 PM [vite] (client) page reload src/App.jsx
+7:02:20 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+7:02:20 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:02:20 PM [vite] (client) page reload src/App.jsx
+7:34:56 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+7:34:56 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:34:56 PM [vite] (client) page reload src/App.jsx
+7:35:07 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+7:35:07 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:35:07 PM [vite] (client) page reload src/App.jsx
+7:35:18 PM [vite] (client) hmr update /src/App.jsx, /src/app.css
+7:35:18 PM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:35:18 PM [vite] (client) page reload src/App.jsx
+3:52:52 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:52:52 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:52:52 AM [vite] (client) page reload src/App.jsx
+3:55:18 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:55:18 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:55:18 AM [vite] (client) page reload src/App.jsx
+3:55:26 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:55:26 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:55:26 AM [vite] (client) page reload src/App.jsx
+3:55:36 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+3:55:36 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:55:36 AM [vite] (client) page reload src/App.jsx
+3:55:49 AM [vite] (client) hmr update /src/app.css
+3:56:00 AM [vite] (client) hmr update /src/app.css
+4:00:09 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:00:09 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:00:09 AM [vite] (client) page reload src/App.jsx
+4:00:53 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:00:53 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:00:53 AM [vite] (client) page reload src/App.jsx
+4:01:13 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:01:13 AM [vite] (client) hmr invalidate /src/App.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:01:13 AM [vite] (client) page reload src/App.jsx
+4:01:25 AM [vite] (client) hmr update /src/App.jsx, /src/app.css
+4:02:50 AM [vite] .env changed, restarting server...
+4:02:50 AM [vite] server restarted.
+4:02:59 AM [vite] (client) hmr update /src/app.css
