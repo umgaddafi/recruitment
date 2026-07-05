@@ -324,7 +324,7 @@ function VacancyCard({ vacancy }) {
             <div className="vacancy-badges-top" style={{ display: 'flex', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
                 <span className={`badge ${vacancy.staff_category === 'Academic' ? 'green' : 'gold'}`}>{vacancy.staff_category}</span>
                 {isNew && <span className="badge blue animate-pulse" title={`Posted on: ${new Date(vacancy.created_at).toLocaleString()}`}><Sparkles size={12} style={{ marginRight: '4px' }} /> New</span>}
-                {isHighDemand && <span className="badge red"><Flame size={12} style={{ marginRight: '4px' }} /> High Demand</span>}
+                {/* {isHighDemand && <span className="badge red"><Flame size={12} style={{ marginRight: '4px' }} /> High Demand</span>} */}
             </div>
             
             <h3 className="vacancy-title" style={{ fontSize: '18px', marginBottom: '8px' }}>{vacancy.title}</h3>
