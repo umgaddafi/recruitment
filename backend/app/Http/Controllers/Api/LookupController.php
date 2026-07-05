@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\College;
 use App\Models\Department;
 use App\Models\DocumentType;
-use App\Models\Faculty;
 use App\Models\Role;
 use App\Models\Unit;
 use Illuminate\Http\Request;
@@ -19,11 +19,13 @@ class LookupController extends Controller
     public function index()
     {
         return response()->json([
-            'academic_ranks' => ['Graduate Assistant', 'Assistant Lecturer', 'Lecturer II', 'Lecturer I', 'Senior Lecturer', 'Reader', 'Professor'],
+            'staff_categories' => \App\Models\StaffCategory::all(),
+            'ranks' => \App\Models\Rank::all(),
+            'academic_ranks' => \App\Models\Rank::where('staff_category_id', 1)->pluck('name'),
             'non_academic_categories' => ['Administrative Staff', 'Technical Staff', 'Registry Staff', 'Library Staff', 'ICT Staff', 'Laboratory Staff', 'Security Staff', 'Works and Maintenance Staff'],
             'application_statuses' => ['Draft', 'Submitted', 'Under Review', 'Shortlisted', 'Not Shortlisted', 'Interview Scheduled', 'Interview Completed', 'Recommended', 'Approved', 'Rejected'],
-            'faculties' => Faculty::with('departments')->orderBy('name')->get(),
-            'departments' => Department::with('faculty')->orderBy('name')->get(),
+            'colleges' => College::with('departments')->orderBy('name')->get(),
+            'departments' => Department::with('college')->orderBy('name')->get(),
             'units' => Unit::orderBy('name')->get(),
             'document_types' => DocumentType::orderBy('name')->get(),
             'roles' => Role::orderBy('label')->get(),

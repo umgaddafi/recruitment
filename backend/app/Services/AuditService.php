@@ -9,8 +9,13 @@ class AuditService
 {
     public function log(string $action, ?string $description = null, array $metadata = [], ?Request $request = null): void
     {
+        $user = $request?->user();
+        if ($user && $user->roles()->where('name', 'applicant')->exists()) {
+            return;
+        }
+
         AuditLog::create([
-            'user_id' => $request?->user()?->id,
+            'user_id' => $user?->id,
             'action' => $action,
             'ip_address' => $request?->ip(),
             'description' => $description,

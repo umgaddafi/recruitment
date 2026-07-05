@@ -12,7 +12,7 @@ class VacancyController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Vacancy::with(['faculty', 'department'])->withCount('applications');
+        $query = Vacancy::with(['college', 'department'])->withCount('applications');
 
         if (! $request->user()?->hasRole(['super_admin', 'hr_admin'])) {
             $query->where('status', 'published')->whereDate('start_date', '<=', now())->whereDate('deadline', '>=', now());
@@ -29,7 +29,7 @@ class VacancyController extends Controller
 
     public function show(Vacancy $vacancy)
     {
-        return response()->json($vacancy->load(['faculty', 'department'])->loadCount('applications'));
+        return response()->json($vacancy->load(['college', 'department'])->loadCount('applications'));
     }
 
     public function store(StoreVacancyRequest $request, AuditService $audit)
@@ -37,7 +37,7 @@ class VacancyController extends Controller
         $vacancy = Vacancy::create($request->validated() + ['created_by' => $request->user()->id]);
         $audit->log('vacancy_created', "Created vacancy {$vacancy->title}.", ['vacancy_id' => $vacancy->id], $request);
 
-        return response()->json($vacancy->load(['faculty', 'department']), 201);
+        return response()->json($vacancy->load(['college', 'department']), 201);
     }
 
     public function update(StoreVacancyRequest $request, Vacancy $vacancy, AuditService $audit)
@@ -45,7 +45,7 @@ class VacancyController extends Controller
         $vacancy->update($request->validated());
         $audit->log('vacancy_updated', "Updated vacancy {$vacancy->title}.", ['vacancy_id' => $vacancy->id], $request);
 
-        return response()->json($vacancy->fresh(['faculty', 'department']));
+        return response()->json($vacancy->fresh(['college', 'department']));
     }
 
     public function destroy(Request $request, Vacancy $vacancy, AuditService $audit)

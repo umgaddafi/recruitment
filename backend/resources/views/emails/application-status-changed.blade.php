@@ -14,40 +14,24 @@
             <td align="center">
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:680px;background:#ffffff;border:1px solid #dfe5ee;border-radius:14px;overflow:hidden;">
                     <tr>
-                        <td style="padding:30px 34px;background:#0b2d57;color:#ffffff;">
+                        <td style="padding:30px 34px;background:#006837;color:#ffffff;text-align:center;">
+                            <img src="https://files.catbox.moe/hgxmy7.png" alt="JOSTUM Logo" style="height:90px; width:auto; margin-bottom:16px; display:inline-block;">
                             <div style="font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#b9d3f4;">JOSEPH SARWUAN TARKA UNIVERSITY MAKURDI, BENUE STATE</div>
-                            <h1 style="margin:12px 0 0;font-size:28px;line-height:1.2;">Tracking Status Updated</h1>
+                            <h1 style="margin:12px 0 0;font-size:28px;line-height:1.2;">RECRUITMENT UPDATE</h1>
                         </td>
                     </tr>
                     <tr>
                         <td style="padding:30px 34px;">
                             <p style="margin:0 0 18px;font-size:16px;line-height:1.65;">Dear {{ $applicantName }},</p>
-                            <p style="margin:0 0 22px;font-size:16px;line-height:1.65;">The tracking status for your application for <strong>{{ $vacancy->title }}</strong> has changed.</p>
-
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:22px 0;border:1px solid #dfe5ee;border-radius:10px;overflow:hidden;">
-                                <tr>
-                                    <td style="padding:14px 16px;background:#f8fafc;color:#647084;font-size:13px;font-weight:800;">Candidate Number</td>
-                                    <td style="padding:14px 16px;background:#f8fafc;font-weight:800;">{{ $application->application_number }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:14px 16px;color:#647084;font-size:13px;font-weight:800;">Previous Status</td>
-                                    <td style="padding:14px 16px;font-weight:800;">{{ $previousStatus }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:14px 16px;background:#f8fafc;color:#647084;font-size:13px;font-weight:800;">New Status</td>
-                                    <td style="padding:14px 16px;background:#f8fafc;font-weight:800;">{{ $application->status }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:14px 16px;color:#647084;font-size:13px;font-weight:800;">Department</td>
-                                    <td style="padding:14px 16px;font-weight:800;">{{ $vacancy->department?->name ?? 'General' }}</td>
-                                </tr>
-                            </table>
+                            <p style="margin:0 0 18px;font-size:16px;line-height:1.65;">
+                                We are writing to update you on your application for <strong>{{ $vacancy->title }}</strong> in the {{ $vacancy->department?->name ?? 'General' }} department (Candidate Ref: {{ $application->application_number }}). Your application status is now <strong>{{ $application->status }}</strong>.
+                            </p>
 
                             @if ($messageText)
-                                <p style="margin:0 0 22px;font-size:15px;line-height:1.65;color:#647084;">{{ $messageText }}</p>
+                                <p style="margin:0 0 22px;font-size:16px;line-height:1.65;">{{ $messageText }}</p>
                             @endif
 
-                            <a href="{{ $trackingUrl }}" style="display:inline-block;padding:13px 18px;background:#0b2d57;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:800;">Login and Track Application</a>
+                            <a href="{{ $trackingUrl }}" style="display:inline-block;padding:13px 18px;background:#006837;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:800;">Login and Track Application</a>
                         </td>
                     </tr>
                     <tr>

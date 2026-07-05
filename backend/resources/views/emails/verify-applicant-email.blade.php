@@ -11,7 +11,8 @@
             <td align="center">
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:680px;background:#ffffff;border:1px solid #dfe5ee;border-radius:14px;overflow:hidden;">
                     <tr>
-                        <td style="padding:30px 34px;background:#0b2d57;color:#ffffff;">
+                        <td style="padding:30px 34px;background:#006837;color:#ffffff;text-align:center;">
+                            <img src="https://files.catbox.moe/hgxmy7.png" alt="JOSTUM Logo" style="height:64px; margin-bottom:16px; display:inline-block;">
                             <div style="font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#b9d3f4;">JOSEPH SARWUAN TARKA UNIVERSITY MAKURDI, BENUE STATE</div>
                             <h1 style="margin:12px 0 0;font-size:28px;line-height:1.2;">Confirm Your Applicant Email</h1>
                         </td>
@@ -21,7 +22,7 @@
                             <p style="margin:0 0 18px;font-size:16px;line-height:1.65;">Dear {{ $user->name }},</p>
                             <p style="margin:0 0 22px;font-size:16px;line-height:1.65;">Your applicant account details have been received. Confirm that this email address belongs to you to complete account creation and activate your access to the recruitment portal.</p>
 
-                            <a href="{{ $verificationUrl }}" style="display:inline-block;padding:14px 20px;background:#0b2d57;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:800;">Confirm Email and Activate Account</a>
+                            <a href="{{ $verificationUrl }}" style="display:inline-block;padding:14px 20px;background:#006837;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:800;">Confirm Email and Activate Account</a>
 
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:26px 0 0;border:1px solid #dfe5ee;border-radius:10px;overflow:hidden;">
                                 <tr>

@@ -16,7 +16,8 @@
             <td align="center">
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:720px;background:#ffffff;border:1px solid #dfe5ee;border-radius:14px;overflow:hidden;">
                     <tr>
-                        <td style="padding:32px 36px;background:#0b2d57;color:#ffffff;">
+                        <td style="padding:32px 36px;background:#006837;color:#ffffff;text-align:center;">
+                            <img src="https://files.catbox.moe/hgxmy7.png" alt="JOSTUM Logo" style="height:64px; margin-bottom:16px; display:inline-block;">
                             <div style="font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#b9d3f4;">JOSEPH SARWUAN TARKA UNIVERSITY MAKURDI, BENUE STATE</div>
                             <h1 style="margin:12px 0 0;font-size:30px;line-height:1.2;">Congratulations, Your Appointment Has Been Approved</h1>
                         </td>
@@ -52,7 +53,7 @@
                             <p style="margin:0 0 18px;font-size:15px;line-height:1.65;color:#647084;">Your appointment letter is attached to this email as a PDF. You can download it directly from this email, and you can also login to the recruitment portal to view or download it from your applicant dashboard.</p>
                             <p style="margin:0 0 26px;font-size:15px;line-height:1.65;color:#647084;">Please keep this message and the attached letter for your records. Further instructions, where applicable, will be communicated through the portal or by the Recruitment Office.</p>
 
-                            <a href="{{ $portalUrl }}" style="display:inline-block;padding:13px 18px;background:#0b2d57;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:800;">Open Appointment Letter</a>
+                            <a href="{{ $portalUrl }}" style="display:inline-block;padding:13px 18px;background:#006837;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:800;">Open Appointment Letter</a>
                         </td>
                     </tr>
                     <tr>

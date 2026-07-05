@@ -11,11 +11,11 @@ class Department extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['faculty_id', 'name', 'code', 'type'];
+    protected $fillable = ['college_id', 'name', 'code', 'type'];
 
-    public function faculty(): BelongsTo
+    public function college(): BelongsTo
     {
-        return $this->belongsTo(Faculty::class);
+        return $this->belongsTo(College::class);
     }
 
     public function units(): HasMany

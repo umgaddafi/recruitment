@@ -74,7 +74,7 @@ class ProfileController extends Controller
             'profile.local_government' => ['nullable', 'string', 'max:120'],
             'profile.address' => ['nullable', 'string', 'max:255'],
             //'profile.city' removed
-            'profile.application_wizard_step' => ['nullable', 'integer', 'between:0,7'],
+            'profile.application_wizard_step' => ['nullable', 'integer', 'between:0,8'],
             'profile.application_wizard_payload' => ['nullable', 'array'],
             'education' => ['array'],
             'education.*.institution' => ['required_with:education', 'string', 'max:255'],
@@ -91,7 +91,7 @@ class ProfileController extends Controller
             'olevels.*.exam_number' => ['required_with:olevels', 'string', 'max:80'],
             'olevels.*.exam_year' => ['required_with:olevels', 'integer', 'between:1950,2035'],
             'olevels.*.exam_type' => ['required_with:olevels', 'in:WAEC,NECO,NABTEB'],
-            'olevels.*.subjects' => ['required_with:olevels', 'array', 'size:9'],
+            'olevels.*.subjects' => ['required_with:olevels', 'array', 'min:1', 'max:9'],
             'olevels.*.subjects.*.subject' => ['required', 'string', 'max:120'],
             'olevels.*.subjects.*.grade' => ['required', 'in:A1,B2,B3,C4,C5,C6,D7,E8,F9'],
             'experience' => ['array'],
@@ -105,7 +105,6 @@ class ProfileController extends Controller
             'certifications.*.name' => ['required_with:certifications', 'string', 'max:255'],
             'certifications.*.issuer' => ['nullable', 'string', 'max:180'],
             'certifications.*.issued_at' => ['nullable', 'date'],
-            'certifications.*.expires_at' => ['nullable', 'date'],
         ]);
 
         if (($data['profile']['application_wizard_step'] ?? 0) >= 3 && empty($data['olevels'])) {

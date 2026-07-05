@@ -16,14 +16,14 @@ class ApplicationNumberService
         if (! $setting || ! is_array($setting->value)) {
             // fallback to random style used previously
             do {
-                $number = 'UNI-REC-'.now()->year.'-'.str_pad((string) random_int(1, 999999), 6, '0', STR_PAD_LEFT);
+                $number = 'JOSTUM/'.now()->year.'/'.str_pad((string) random_int(1, 999999), 6, '0', STR_PAD_LEFT);
             } while (Application::where('application_number', $number)->exists());
 
             return $number;
         }
 
         $config = $setting->value;
-        $prefix = $config['prefix'] ?? ('UNI-REC');
+        $prefix = $config['prefix'] ?? 'JOSTUM';
         $padding = isset($config['padding']) ? (int) $config['padding'] : 6;
         $resetYearly = $config['reset_yearly'] ?? true;
 
@@ -40,13 +40,13 @@ class ApplicationNumberService
                 $next = 1;
             }
 
-            $number = sprintf('%s-%s-%s', $prefix, $year, str_pad((string) $next, $padding, '0', STR_PAD_LEFT));
+            $number = sprintf('%s/%s/%s', $prefix, $year, str_pad((string) $next, $padding, '0', STR_PAD_LEFT));
 
             // ensure no collision
             if (Application::where('application_number', $number)->exists()) {
                 // fallback to random if collision occurs
                 do {
-                    $number = $prefix.'-'.now()->year.'-'.str_pad((string) random_int(1, 999999), $padding, '0', STR_PAD_LEFT);
+                    $number = $prefix.'/'.now()->year.'/'.str_pad((string) random_int(1, 999999), $padding, '0', STR_PAD_LEFT);
                 } while (Application::where('application_number', $number)->exists());
             } else {
                 // persist next_sequence and last_year

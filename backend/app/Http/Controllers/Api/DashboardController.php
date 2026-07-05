@@ -25,7 +25,16 @@ class DashboardController extends Controller
                 'rejected_applicants' => RecruitmentApplication::where('status', 'Rejected')->count(),
             ],
             'recent_applications' => RecruitmentApplication::with(['user.profile', 'vacancy'])->latest()->limit(8)->get(),
-            'status_distribution' => RecruitmentApplication::select('status', DB::raw('count(*) as total'))->groupBy('status')->get(),
+            'status_distribution' => collect(['Submitted', 'Shortlisted', 'Interview Scheduled', 'Interview Completed', 'Recommended', 'Approved', 'Rejected'])
+                ->map(fn($status) => ['status' => $status, 'total' => 0])
+                ->keyBy('status')
+                ->merge(
+                    RecruitmentApplication::select('status', DB::raw('count(*) as total'))
+                        ->where('status', '!=', 'Draft')
+                        ->groupBy('status')
+                        ->get()
+                        ->keyBy('status')
+                )->values(),
             'department_applications' => DB::table('applications')
                 ->join('vacancies', 'applications.vacancy_id', '=', 'vacancies.id')
                 ->leftJoin('departments', 'vacancies.department_id', '=', 'departments.id')

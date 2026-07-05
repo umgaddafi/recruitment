@@ -15,7 +15,7 @@ class FinalApprovalController extends Controller
     {
         return response()->json(RecruitmentApplication::with([
             'user.profile',
-            'vacancy.department.faculty',
+            'vacancy.department.college',
             'documents.documentType',
             'reviews.reviewer',
             'finalApproval',

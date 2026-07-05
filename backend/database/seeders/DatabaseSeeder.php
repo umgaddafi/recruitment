@@ -4,10 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\Application;
 use App\Models\ApplicantProfile;
+use App\Models\College;
 use App\Models\Department;
 use App\Models\DocumentType;
 use App\Models\EducationalQualification;
-use App\Models\Faculty;
 use App\Models\FinalApproval;
 use App\Models\InterviewPanelMember;
 use App\Models\InterviewSchedule;
@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         $roles = [
             'super_admin' => 'Super Admin',
             'hr_admin' => 'HR/Admin Officer',
-            'reviewer' => 'Department/Faculty Reviewer',
+            'reviewer' => 'Department/College Reviewer',
             'panel_member' => 'Interview Panel Member',
             'applicant' => 'Applicant',
             'registrar' => 'Registrar/Final Approval Officer',
@@ -60,12 +60,12 @@ class DatabaseSeeder extends Seeder
         }
 
         $users = [
-            ['Super Admin', 'superadmin@university.edu', 'super_admin'],
-            ['HR Officer', 'hr@university.edu', 'hr_admin'],
-            ['Faculty Reviewer', 'reviewer@university.edu', 'reviewer'],
-            ['Panel Member', 'panel@university.edu', 'panel_member'],
-            ['Registrar', 'registrar@university.edu', 'registrar'],
-            ['Ada Applicant', 'applicant@example.com', 'applicant'],
+            ['Super Admin', 'superadmin@uam.edu.ng', 'super_admin'],
+            ['HR Officer', 'hr@uam.edu.ng', 'hr_admin'],
+            ['College Reviewer', 'reviewer@uam.edu.ng', 'reviewer'],
+            ['Panel Member', 'panel@uam.edu.ng', 'panel_member'],
+            ['Registrar', 'registrar@uam.edu.ng', 'registrar'],
+            ['Ada Applicant', 'applicant@gmail.com', 'applicant'],
         ];
 
         foreach ($users as [$name, $email, $role]) {
@@ -82,10 +82,10 @@ class DatabaseSeeder extends Seeder
             $user->roles()->syncWithoutDetaching(Role::where('name', $role)->value('id'));
         }
 
-        $science = Faculty::firstOrCreate(['code' => 'SCI'], ['name' => 'Faculty of Science', 'description' => 'Academic departments in pure and applied sciences.']);
-        $admin = Faculty::firstOrCreate(['code' => 'ADM'], ['name' => 'Administration', 'description' => 'Central administrative and registry operations.']);
-        $cs = Department::firstOrCreate(['code' => 'CSC'], ['faculty_id' => $science->id, 'name' => 'Computer Science', 'type' => 'academic']);
-        $registry = Department::firstOrCreate(['code' => 'REG'], ['faculty_id' => $admin->id, 'name' => 'Registry', 'type' => 'non-academic']);
+        $science = College::firstOrCreate(['code' => 'SCI'], ['name' => 'College of Science', 'description' => 'Academic departments in pure and applied sciences.']);
+        $admin = College::firstOrCreate(['code' => 'ADM'], ['name' => 'Administration', 'description' => 'Central administrative and registry operations.']);
+        $cs = Department::firstOrCreate(['code' => 'CSC'], ['college_id' => $science->id, 'name' => 'Computer Science', 'type' => 'academic']);
+        $registry = Department::firstOrCreate(['code' => 'REG'], ['college_id' => $admin->id, 'name' => 'Registry', 'type' => 'non-academic']);
 
         $documentTypes = [
             ['Passport Photograph', 'passport_photograph', true],
@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
         $lecturer = Vacancy::firstOrCreate(
             ['title' => 'Lecturer II - Software Engineering'],
             [
-                'faculty_id' => $science->id,
+                'college_id' => $science->id,
                 'department_id' => $cs->id,
                 'employment_type' => 'Full-time',
                 'staff_category' => 'Academic',
@@ -120,14 +120,14 @@ class DatabaseSeeder extends Seeder
                 'start_date' => now()->subDays(7),
                 'deadline' => now()->addDays(45),
                 'status' => 'published',
-                'created_by' => User::where('email', 'hr@university.edu')->value('id'),
+                'created_by' => User::where('email', 'hr@uam.edu.ng')->value('id'),
             ]
         );
 
         Vacancy::firstOrCreate(
             ['title' => 'Assistant Registrar - Admissions'],
             [
-                'faculty_id' => $admin->id,
+                'college_id' => $admin->id,
                 'department_id' => $registry->id,
                 'employment_type' => 'Full-time',
                 'staff_category' => 'Non-Academic',
@@ -141,11 +141,11 @@ class DatabaseSeeder extends Seeder
                 'start_date' => now()->subDays(3),
                 'deadline' => now()->addDays(30),
                 'status' => 'published',
-                'created_by' => User::where('email', 'hr@university.edu')->value('id'),
+                'created_by' => User::where('email', 'hr@uam.edu.ng')->value('id'),
             ]
         );
 
-        $applicant = User::where('email', 'applicant@example.com')->first();
+        $applicant = User::where('email', 'applicant@gmail.com')->first();
         ApplicantProfile::updateOrCreate(
             ['user_id' => $applicant->id],
             [
@@ -180,17 +180,17 @@ class DatabaseSeeder extends Seeder
         );
 
         Review::updateOrCreate(
-            ['application_id' => $application->id, 'reviewer_id' => User::where('email', 'reviewer@university.edu')->value('id')],
+            ['application_id' => $application->id, 'reviewer_id' => User::where('email', 'reviewer@uam.edu.ng')->value('id')],
             ['qualification_score' => 22, 'experience_score' => 18, 'publication_score' => 15, 'fit_score' => 20, 'total_score' => 75, 'decision' => 'recommended', 'comments' => 'Strong applicant for teaching and research potential.']
         );
-        Shortlist::firstOrCreate(['application_id' => $application->id], ['shortlisted_by' => User::where('email', 'hr@university.edu')->value('id'), 'method' => 'manual']);
+        Shortlist::firstOrCreate(['application_id' => $application->id], ['shortlisted_by' => User::where('email', 'hr@uam.edu.ng')->value('id'), 'method' => 'manual']);
         $schedule = InterviewSchedule::firstOrCreate(
             ['vacancy_id' => $lecturer->id, 'title' => 'Academic Staff Interview Batch A'],
             ['batch_name' => 'Batch A', 'interview_date' => now()->addDays(14), 'interview_time' => '10:00', 'venue' => 'Senate Chamber', 'mode' => 'physical']
         );
         $schedule->applications()->syncWithoutDetaching([$application->id]);
-        InterviewPanelMember::firstOrCreate(['interview_schedule_id' => $schedule->id, 'user_id' => User::where('email', 'panel@university.edu')->value('id')]);
-        FinalApproval::updateOrCreate(['application_id' => $application->id], ['approved_by' => User::where('email', 'registrar@university.edu')->value('id'), 'decision' => 'pending', 'reason' => 'Awaiting council ratification.']);
+        InterviewPanelMember::firstOrCreate(['interview_schedule_id' => $schedule->id, 'user_id' => User::where('email', 'panel@uam.edu.ng')->value('id')]);
+        FinalApproval::updateOrCreate(['application_id' => $application->id], ['approved_by' => User::where('email', 'registrar@uam.edu.ng')->value('id'), 'decision' => 'pending', 'reason' => 'Awaiting council ratification.']);
 
         $defaults = [
             'portal_name' => 'University Staff Recruitment Portal',

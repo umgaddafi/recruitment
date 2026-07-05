@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\AuditLog;
+use App\Models\College;
 use App\Models\Department;
 use App\Models\DocumentType;
-use App\Models\Faculty;
 use App\Models\Role;
 use App\Models\SystemSetting;
 use App\Models\User;
@@ -18,7 +18,7 @@ class AdminController extends Controller
 {
     public function users(Request $request)
     {
-        return response()->json(User::with('roles')->latest()->paginate($request->integer('per_page', 20)));
+        return response()->json(User::with('roles')->whereDoesntHave('roles', function($q) { $q->where('name', 'applicant'); })->latest()->paginate($request->integer('per_page', 50)));
     }
 
     public function storeUser(Request $request, AuditService $audit)
@@ -50,10 +50,17 @@ class AdminController extends Controller
             'name' => ['sometimes', 'string', 'max:255'],
             'email' => ['sometimes', 'email', 'unique:users,email,'.$user->id],
             'phone' => ['nullable', 'string', 'max:40'],
+            'password' => ['nullable', 'min:8'],
             'status' => ['sometimes', 'in:active,inactive'],
             'roles' => ['sometimes', 'array'],
             'roles.*' => ['exists:roles,name'],
         ]);
+
+        if (!empty($data['password'])) {
+            $data['password'] = \Illuminate\Support\Facades\Hash::make($data['password']);
+        } else {
+            unset($data['password']);
+        }
 
         $user->update(collect($data)->except('roles')->all());
         if (isset($data['roles'])) {
@@ -64,22 +71,29 @@ class AdminController extends Controller
         return response()->json($user->fresh('roles'));
     }
 
+    public function deleteUser(User $user, AuditService $audit)
+    {
+        $audit->log('user_deleted', "Deleted user {$user->email}.", ['user_id' => $user->id], request());
+        $user->delete();
+        return response()->noContent();
+    }
+
     public function organization()
     {
         return response()->json([
-            'faculties' => Faculty::with('departments.units')->get(),
-            'departments' => Department::with('faculty', 'units')->get(),
+            'colleges' => College::with('departments.units')->get(),
+            'departments' => Department::with('college', 'units')->get(),
         ]);
     }
 
-    public function storeFaculty(Request $request)
+    public function storeCollege(Request $request)
     {
-        return response()->json(Faculty::create($request->validate(['name' => ['required'], 'code' => ['required', 'unique:faculties,code'], 'description' => ['nullable']])), 201);
+        return response()->json(College::create($request->validate(['name' => ['required'], 'code' => ['required', 'unique:colleges,code'], 'description' => ['nullable']])), 201);
     }
 
     public function storeDepartment(Request $request)
     {
-        return response()->json(Department::create($request->validate(['faculty_id' => ['nullable', 'exists:faculties,id'], 'name' => ['required'], 'code' => ['required', 'unique:departments,code'], 'type' => ['required', 'in:academic,non-academic']])), 201);
+        return response()->json(Department::create($request->validate(['college_id' => ['nullable', 'exists:colleges,id'], 'name' => ['required'], 'code' => ['required', 'unique:departments,code'], 'type' => ['required', 'in:academic,non-academic']])), 201);
     }
 
     public function documentTypes(Request $request)
@@ -110,6 +124,13 @@ class AdminController extends Controller
 
     public function auditLogs(Request $request)
     {
-        return response()->json(AuditLog::with('user')->latest()->paginate($request->integer('per_page', 30)));
+        return response()->json(
+            AuditLog::with('user')
+                ->whereDoesntHave('user.roles', function ($q) {
+                    $q->where('name', 'applicant');
+                })
+                ->latest()
+                ->paginate($request->integer('per_page', 30))
+        );
     }
 }

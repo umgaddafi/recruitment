@@ -14,7 +14,7 @@ class ReviewController extends Controller
 {
     public function index(Request $request)
     {
-        $query = RecruitmentApplication::with(['vacancy.department.faculty', 'user.profile', 'documents.documentType', 'reviews.reviewer'])
+        $query = RecruitmentApplication::with(['vacancy.department.college', 'user.profile', 'documents.documentType', 'reviews.reviewer'])
             ->whereIn('status', ['Submitted', 'Under Review', 'Shortlisted', 'Not Shortlisted']);
 
         return response()->json($query->latest()->paginate($request->integer('per_page', 15)));

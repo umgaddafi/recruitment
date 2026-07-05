@@ -91,8 +91,9 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/admin/users', [AdminController::class, 'users']);
         Route::post('/admin/users', [AdminController::class, 'storeUser']);
         Route::put('/admin/users/{user}', [AdminController::class, 'updateUser']);
+        Route::delete('/admin/users/{user}', [AdminController::class, 'deleteUser']);
         Route::get('/admin/organization', [AdminController::class, 'organization']);
-        Route::post('/admin/faculties', [AdminController::class, 'storeFaculty']);
+        Route::post('/admin/colleges', [AdminController::class, 'storeCollege']);
         Route::post('/admin/departments', [AdminController::class, 'storeDepartment']);
         Route::match(['get', 'post'], '/admin/document-types', [AdminController::class, 'documentTypes']);
         Route::match(['get', 'post'], '/admin/settings', [AdminController::class, 'settings']);

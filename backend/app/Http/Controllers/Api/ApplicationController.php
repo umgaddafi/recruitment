@@ -40,7 +40,7 @@ class ApplicationController extends Controller
     {
         $this->authorizeApplicationAccess($request, $application);
 
-        return response()->json($application->load(['vacancy.department.faculty', 'user.profile', 'documents', 'reviews', 'finalApproval']));
+        return response()->json($application->load(['vacancy.department.college', 'user.profile', 'documents', 'reviews', 'finalApproval']));
     }
 
     public function store(SubmitApplicationRequest $request, ApplicationNumberService $numbers, AuditService $audit)

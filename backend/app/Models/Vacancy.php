@@ -12,7 +12,7 @@ class Vacancy extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'title', 'faculty_id', 'department_id', 'unit_id', 'employment_type',
+        'title', 'college_id', 'department_id', 'unit_id', 'employment_type',
         'staff_category', 'rank_or_grade', 'vacant_positions', 'minimum_qualification', 'required_documents',
         'requirements',
         'job_description', 'eligibility_criteria', 'start_date', 'deadline', 'status', 'created_by',
@@ -28,9 +28,9 @@ class Vacancy extends Model
         ];
     }
 
-    public function faculty(): BelongsTo
+    public function college(): BelongsTo
     {
-        return $this->belongsTo(Faculty::class);
+        return $this->belongsTo(College::class);
     }
 
     public function department(): BelongsTo

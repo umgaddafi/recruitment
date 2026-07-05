@@ -17,7 +17,7 @@ class SubmitApplicationRequest extends FormRequest
             'vacancy_id' => ['required', 'exists:vacancies,id'],
             'cover_letter' => ['nullable', 'string'],
             'submit' => ['nullable', 'boolean'],
-            'wizard_step' => ['nullable', 'integer', 'between:0,7'],
+            'wizard_step' => ['nullable', 'integer', 'between:0,8'],
             'declaration_accepted' => ['nullable', 'boolean'],
             'g_recaptcha_response' => ['nullable', 'string'],
         ];

@@ -6,16 +6,46 @@ use App\Http\Controllers\Controller;
 use App\Models\Application as RecruitmentApplication;
 use App\Models\InterviewSchedule;
 use App\Models\Staff;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $query = RecruitmentApplication::query();
+        
+        if ($request->has('department_id') && $request->department_id) {
+            $query->whereHas('vacancy', function ($q) use ($request) {
+                $q->where('department_id', $request->department_id);
+            });
+        }
+        
+        if ($request->has('vacancy_id') && $request->vacancy_id) {
+            $query->where('vacancy_id', $request->vacancy_id);
+        }
+
+        $allApplications = $query->with(['user.profile', 'vacancy.department'])->get();
+        
+        $applicantsByStatus = $allApplications->groupBy('status')->map->count()->map(function($count, $status) {
+            return ['status' => $status, 'total' => $count];
+        })->values();
+
+        $applicantsByDepartment = $allApplications->groupBy(function ($app) {
+            return $app->vacancy->department->name ?? 'Unknown';
+        })->map->count()->map(function($count, $dept) {
+            return ['department' => $dept, 'total' => $count];
+        })->values();
+
         return response()->json([
-            'applicants_by_status' => RecruitmentApplication::query()->selectRaw('status, count(*) as total')->groupBy('status')->get(),
-            'approved_candidates' => RecruitmentApplication::with(['user.profile', 'vacancy'])->where('status', 'Approved')->get(),
-            'interview_schedule' => InterviewSchedule::with(['vacancy', 'applications.user.profile'])->latest()->get(),
+            'total_applications' => $allApplications->count(),
+            'total_approved' => $allApplications->where('status', 'Approved')->count(),
+            'total_shortlisted' => $allApplications->where('status', 'Shortlisted')->count(),
+            'total_rejected' => $allApplications->where('status', 'Rejected')->count(),
+            'applicants_by_status' => $applicantsByStatus,
+            'applicants_by_department' => $applicantsByDepartment,
+            'recent_applications' => $allApplications->sortByDesc('created_at')->take(50)->values(),
+            'interview_schedule' => InterviewSchedule::with(['vacancy', 'applications.user.profile'])->latest()->take(10)->get(),
         ]);
     }
 
@@ -32,30 +62,10 @@ class ReportController extends Controller
             ->orderBy('pf_number')
             ->get();
 
-        $lines = [
-            'JOSEPH SARWUAN TARKA UNIVERSITY MAKURDI',
-            'BENUE STATE',
-            'Successful List',
-            '',
-            'S/N   PF Number     Name                               Role                          Department',
-            str_repeat('-', 95),
-        ];
+        $pdf = Pdf::setOption(['isRemoteEnabled' => true])
+            ->loadView('pdf.successful-list', compact('staff'));
 
-        foreach ($staff as $index => $item) {
-            $name = trim(collect([$item->first_name, $item->surname, $item->other_name])->filter()->implode(' ')) ?: $item->user?->name ?: 'Staff Member';
-            $role = $item->rank ?: ($item->application?->vacancy?->rank_or_grade ?: $item->application?->vacancy?->staff_category ?: 'N/A');
-            $department = $item->department ?: ($item->application?->vacancy?->department?->name ?: 'General');
-            $lines[] = sprintf(
-                '%-4s %-12s %-34s %-28s %-20s',
-                $index + 1,
-                $item->pf_number ?: 'N/A',
-                $name,
-                $role,
-                $department
-            );
-        }
-
-        return response($this->pdf($lines), 200, [
+        return response($pdf->output(), 200, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'attachment; filename="successful-list.pdf"',
         ]);
@@ -63,20 +73,35 @@ class ReportController extends Controller
 
     public function export(Request $request, string $type)
     {
-        $rows = match ($type) {
-            'shortlisted' => RecruitmentApplication::with(['user.profile', 'vacancy'])->where('status', 'Shortlisted')->get(),
-            'approved' => RecruitmentApplication::with(['user.profile', 'vacancy'])->where('status', 'Approved')->get(),
-            'rejected' => RecruitmentApplication::with(['user.profile', 'vacancy'])->where('status', 'Rejected')->get(),
-            default => RecruitmentApplication::with(['user.profile', 'vacancy'])->get(),
+        $query = RecruitmentApplication::with(['user.profile', 'vacancy.department']);
+        
+        if ($request->has('department_id') && $request->department_id) {
+            $query->whereHas('vacancy', function ($q) use ($request) {
+                $q->where('department_id', $request->department_id);
+            });
+        }
+        
+        if ($request->has('vacancy_id') && $request->vacancy_id) {
+            $query->where('vacancy_id', $request->vacancy_id);
+        }
+
+        $query = match ($type) {
+            'shortlisted' => $query->where('status', 'Shortlisted'),
+            'approved' => $query->where('status', 'Approved'),
+            'rejected' => $query->where('status', 'Rejected'),
+            default => $query,
         };
 
-        $csv = "Application Number,Applicant,Vacancy,Status,Submitted At\n";
+        $rows = $query->get();
+
+        $csv = "Application Number,Applicant,Vacancy,Department,Status,Submitted At\n";
         foreach ($rows as $row) {
             $csv .= sprintf(
-                "\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\n",
+                "\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\n",
                 $row->application_number,
                 $row->user->name,
                 $row->vacancy->title,
+                $row->vacancy->department->name ?? 'N/A',
                 $row->status,
                 $row->submitted_at
             );

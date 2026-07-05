@@ -15,7 +15,7 @@ class StoreVacancyRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'faculty_id' => ['nullable', 'exists:faculties,id'],
+            'college_id' => ['nullable', 'exists:colleges,id'],
             'department_id' => ['nullable', 'exists:departments,id'],
             'unit_id' => ['nullable', 'exists:units,id'],
             'employment_type' => ['required', 'string', 'max:100'],

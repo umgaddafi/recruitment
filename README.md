@@ -29,12 +29,12 @@ Open the machine's LAN address in your browser, for example `http://192.168.1.10
 
 ## Test Users
 
-- Super Admin: `superadmin@university.edu` / `password123`
-- HR/Admin: `hr@university.edu` / `password123`
-- Reviewer: `reviewer@university.edu` / `password123`
-- Panel Member: `panel@university.edu` / `password123`
-- Registrar: `registrar@university.edu` / `password123`
-- Applicant: `applicant@example.com` / `password123`
+- Super Admin: `superadmin@uam.edu.ng` / `password123`
+- HR/Admin: `hr@uam.edu.ng` / `password123`
+- Reviewer: `reviewer@uam.edu.ng` / `password123`
+- Panel Member: `panel@uam.edu.ng` / `password123`
+- Registrar: `registrar@uam.edu.ng` / `password123`
+- Applicant: `applicant@gmail.com` / `password123`
 
 ## Documentation
 - Architecture and database schema: `docs/ARCHITECTURE.md`
