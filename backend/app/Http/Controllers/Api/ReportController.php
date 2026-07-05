@@ -32,7 +32,7 @@ class ReportController extends Controller
         })->values();
 
         $applicantsByDepartment = $allApplications->groupBy(function ($app) {
-            return $app->vacancy->department->name ?? 'Unknown';
+            return $app->vacancy?->department?->name ?? 'Unknown';
         })->map->count()->map(function($count, $dept) {
             return ['department' => $dept, 'total' => $count];
         })->values();
@@ -99,9 +99,9 @@ class ReportController extends Controller
             $csv .= sprintf(
                 "\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\n",
                 $row->application_number,
-                $row->user->name,
-                $row->vacancy->title,
-                $row->vacancy->department->name ?? 'N/A',
+                $row->user?->name ?? 'N/A',
+                $row->vacancy?->title ?? 'N/A',
+                $row->vacancy?->department?->name ?? 'N/A',
                 $row->status,
                 $row->submitted_at
             );
