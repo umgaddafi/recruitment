@@ -6243,7 +6243,44 @@ a.contact-info-item:hover {
     }
 }
 
-/* Applicant Dashboard Hamburger Menu Overrides */
+/* Applicant Dashboard Hamburger Menu Overrides & Mobile Responsive Sidebar */
+.mobile-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+.mobile-drawer-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.mobile-menu-btn:hover {
+    background: var(--surface-2);
+}
+
+.mobile-close-btn {
+    display: none;
+}
+
+/* Applicant specific desktop overrides */
 .dash-layout.applicant-layout {
     grid-template-columns: minmax(0, 1fr);
 }
@@ -6260,36 +6297,60 @@ a.contact-info-item:hover {
 .dash-layout.applicant-layout .sidebar.open {
     transform: translateX(0);
 }
-.applicant-drawer-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    backdrop-filter: blur(2px);
-}
-.applicant-drawer-overlay.open {
-    opacity: 1;
-    pointer-events: auto;
-}
-.applicant-menu-btn {
+.dash-layout.applicant-layout .mobile-menu-btn.applicant-menu-btn {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--ink);
-    cursor: pointer;
-    transition: all 0.2s ease;
 }
-.applicant-menu-btn:hover {
-    background: var(--surface-2);
+.dash-layout.applicant-layout .mobile-close-btn {
+    display: inline-flex;
 }
 .dash-layout.applicant-layout .sidebar-top .collapse-toggle {
     display: none;
+}
+
+/* Make ALL sidebars act as mobile drawer on screens <= 920px */
+@media (max-width: 920px) {
+    .dash-layout {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+    .dash-layout .sidebar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1001;
+        transform: translateX(-100%);
+        width: 276px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 24px 20px !important;
+        align-items: stretch !important;
+    }
+    .dash-layout .sidebar.open {
+        transform: translateX(0);
+    }
+    .dash-layout .sidebar-top {
+        flex-direction: row !important;
+    }
+    .dash-layout .side-link {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        padding: 9px 10px !important;
+    }
+    .dash-layout .brand span:not(.brand-mark),
+    .dash-layout .side-link span,
+    .dash-layout .role-chip {
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: auto !important;
+        transform: none !important;
+        pointer-events: auto !important;
+    }
+    .dash-layout .sidebar-top .collapse-toggle.desktop-only {
+        display: none !important;
+    }
+    .mobile-menu-btn {
+        display: inline-flex !important;
+    }
+    .mobile-close-btn {
+        display: inline-flex !important;
+    }
 }
