@@ -14,24 +14,50 @@ cd frontend
 npm run build
 cd ..
 
-# 2. Stage changes
+# 2. Copy frontend build to root
+echo ""
+echo "📂 Copying frontend build files to root..."
+cp -r frontend/dist/* .
+
+# 3. Swap .env files
+echo ""
+echo "🔄 Swapping .env files for production..."
+if [ -f backend/.env ]; then
+    mv backend/.env backend/.env.local_backup
+fi
+if [ -f backend/.env.host ]; then
+    mv backend/.env.host backend/.env
+fi
+
+# 4. Stage changes
 echo ""
 echo "📝 Staging changes for git..."
-# Force add the frontend/dist folder in case it is ignored in any global gitignore
-git add -f frontend/dist/
+# Force add backend/.env in case it's in .gitignore
+git add -f backend/.env
+git add index.html assets/ .htaccess
 git add .
 
-# 3. Commit changes
+# 5. Commit changes
 echo ""
 echo "💾 Committing changes..."
 # We use || true so the script doesn't fail if there's nothing to commit
-git commit -m "updated code - $(date +'%Y-%m-%d %H:%M:%S')" || true
+git commit -m "Deploy to Bluehost - $(date +'%Y-%m-%d %H:%M:%S')" || true
 
-# 4. Push to GitHub
+# 6. Push to GitHub
 echo ""
 echo "☁️  Pushing to GitHub..."
 git push origin HEAD
 
+# 7. Restore local environment
 echo ""
-echo "✅ Deployment pushed to GitHub successfully!"
+echo "🔄 Restoring local .env files..."
+if [ -f backend/.env ]; then
+    mv backend/.env backend/.env.host
+fi
+if [ -f backend/.env.local_backup ]; then
+    mv backend/.env.local_backup backend/.env
+fi
+
+echo ""
+echo "✅ Deployment pushed to GitHub successfully! Bluehost can now pull this."
 
