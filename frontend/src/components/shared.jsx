@@ -589,28 +589,26 @@ function DashboardShell({ children }) {
     const isApplicant = primaryRole === 'applicant';
     const initials = user.name?.split(' ').filter(Boolean).slice(0, 2).map((part) => part[0]).join('').toUpperCase() || 'U';
     return (
-        <div className={`dash-layout ${isApplicant ? 'applicant-layout' : isCollapsed ? 'collapsed' : ''}`}>
+        <div className={`dash-layout ${isCollapsed ? 'collapsed' : ''}`}>
             {/* The mobile overlay applies for both applicant desktop drawer AND mobile drawer for everyone */}
             <div className={`mobile-drawer-overlay ${isMobileMenuOpen ? 'open' : ''}`} onClick={() => setIsMobileMenuOpen(false)}></div>
             
-            <aside className={`sidebar ${isCollapsed && !isApplicant ? 'collapsed' : ''} ${isMobileMenuOpen ? 'open' : ''}`}>
+            <aside className={`sidebar ${isCollapsed ? 'collapsed' : ''} ${isMobileMenuOpen ? 'open' : ''}`}>
                 <div className="sidebar-top">
                     <Link className="brand" to="/" onClick={() => setIsMobileMenuOpen(false)}>
                         <span className="brand-mark"><img src="/assets/jlogo.png" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></span>
                         <span>Recruitment</span>
                     </Link>
                     <div className="sidebar-actions">
-                        {!isApplicant && (
-                            <button className="collapse-toggle desktop-only" type="button" onClick={() => setIsCollapsed(!isCollapsed)} aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}>
-                                {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
-                            </button>
-                        )}
+                        <button className="collapse-toggle desktop-only" type="button" onClick={() => setIsCollapsed(!isCollapsed)} aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}>
+                            {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+                        </button>
                         <button className="btn icon mobile-close-btn" onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#fff', border: 'none' }}>
                             <X size={20} />
                         </button>
                     </div>
                 </div>
-                {!isCollapsed && !isApplicant && <div className="role-chip desktop-only">{roleLabels[primaryRole] || 'Portal User'}</div>}
+                {!isCollapsed && <div className="role-chip desktop-only">{roleLabels[primaryRole] || 'Portal User'}</div>}
                 <nav className="side-nav">
                     {visibleNav.map(({ path, label, icon: Icon }) => (
                         <NavLink className="side-link" to={path} key={path} data-tooltip={label} onClick={() => setIsMobileMenuOpen(false)}>
@@ -626,7 +624,7 @@ function DashboardShell({ children }) {
             <main className="main">
                 <div className="main-head">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                        <button className={`mobile-menu-btn ${isApplicant ? 'applicant-menu-btn' : ''}`} onClick={() => setIsMobileMenuOpen(true)}>
+                        <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(true)}>
                             <Menu size={22} />
                         </button>
                         <div><strong>{user.name}</strong><div className="muted">{user.roles?.map((r) => r.label).join(', ')}</div></div>

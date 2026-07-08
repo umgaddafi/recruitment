@@ -6280,32 +6280,7 @@ a.contact-info-item:hover {
     display: none;
 }
 
-/* Applicant specific desktop overrides */
-.dash-layout.applicant-layout {
-    grid-template-columns: minmax(0, 1fr);
-}
-.dash-layout.applicant-layout .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 1001;
-    transform: translateX(-100%);
-    width: 276px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.dash-layout.applicant-layout .sidebar.open {
-    transform: translateX(0);
-}
-.dash-layout.applicant-layout .mobile-menu-btn.applicant-menu-btn {
-    display: inline-flex;
-}
-.dash-layout.applicant-layout .mobile-close-btn {
-    display: inline-flex;
-}
-.dash-layout.applicant-layout .sidebar-top .collapse-toggle {
-    display: none;
-}
+
 
 /* Make ALL sidebars act as mobile drawer on screens <= 920px */
 @media (max-width: 920px) {
