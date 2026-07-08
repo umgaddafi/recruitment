@@ -6277,7 +6277,7 @@ a.contact-info-item:hover {
 }
 
 .mobile-close-btn {
-    display: none;
+    display: none !important;
 }
 
 
