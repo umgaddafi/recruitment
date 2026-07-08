@@ -652,7 +652,7 @@ const roleLabels = {
 const nav = [
     { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: ['applicant', 'super_admin', 'hr_admin', 'reviewer', 'panel_member', 'registrar'] },
     { path: '/profile', label: 'Profile', icon: UsersRound, roles: ['applicant'] },
-    { path: '/settings', label: 'Account Settings', icon: Settings, roles: ['applicant', 'hr_admin', 'reviewer', 'panel_member', 'registrar'] },
+    // { path: '/settings', label: 'Account Settings', icon: Settings, roles: ['applicant', 'hr_admin', 'reviewer', 'panel_member', 'registrar'] },
     { path: '/admin/vacancies', label: 'Vacancies', icon: BriefcaseBusiness, roles: ['super_admin', 'hr_admin'] },
     { path: '/apply', label: 'Application Form', icon: FileText, roles: ['applicant'] },
     { path: '/tracking', label: 'Tracking', icon: Bell, roles: ['applicant'] },
