@@ -928,7 +928,7 @@ function ApplicationWizard() {
                     original_name: document.original_name,
                     error: '',
                 })) || [{ label: 'CV', document_type_id: '', file: null, error: '' }]);
-                const isAppSubmitted = Boolean(draft?.submitted_at || draft?.status !== 'Draft');
+                const isAppSubmitted = Boolean(draft && (draft.submitted_at || draft.status !== 'Draft'));
                 if (isAppSubmitted) {
                     setIsSubmitted(true);
                     setStep(8);
