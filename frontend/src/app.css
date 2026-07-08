@@ -6242,3 +6242,54 @@ a.contact-info-item:hover {
         display: none;
     }
 }
+
+/* Applicant Dashboard Hamburger Menu Overrides */
+.dash-layout.applicant-layout {
+    grid-template-columns: minmax(0, 1fr);
+}
+.dash-layout.applicant-layout .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1001;
+    transform: translateX(-100%);
+    width: 276px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dash-layout.applicant-layout .sidebar.open {
+    transform: translateX(0);
+}
+.applicant-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+.applicant-drawer-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+.applicant-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.applicant-menu-btn:hover {
+    background: var(--surface-2);
+}
+.dash-layout.applicant-layout .sidebar-top .collapse-toggle {
+    display: none;
+}

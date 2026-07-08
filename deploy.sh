@@ -25,7 +25,7 @@ git add .
 echo ""
 echo "💾 Committing changes..."
 # We use || true so the script doesn't fail if there's nothing to commit
-git commit -m "Deploy: Build frontend dist and update code - $(date +'%Y-%m-%d %H:%M:%S')" || true
+git commit -m "updated code - $(date +'%Y-%m-%d %H:%M:%S')" || true
 
 # 4. Push to GitHub
 echo ""
@@ -34,4 +34,4 @@ git push origin HEAD
 
 echo ""
 echo "✅ Deployment pushed to GitHub successfully!"
-echo "➡️  You can now log into Bluehost and run 'git pull' to update the live server."
+

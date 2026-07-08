@@ -554,6 +554,8 @@ function DashboardShell({ children }) {
             .catch(() => { });
     }, [user, location.pathname]);
 
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     useEffect(() => {
         if (!user || !canAccess(user, ['applicant'])) {
             setHasSubmittedApplication(false);
@@ -584,25 +586,36 @@ function DashboardShell({ children }) {
         && (!item.requiresSubmittedApplication || hasSubmittedApplication)
         && (!item.requiresApprovedApplication || hasApprovedApplication));
     const primaryRole = user.roles?.[0]?.name;
+    const isApplicant = primaryRole === 'applicant';
     const initials = user.name?.split(' ').filter(Boolean).slice(0, 2).map((part) => part[0]).join('').toUpperCase() || 'U';
     return (
-        <div className={`dash-layout ${isCollapsed ? 'collapsed' : ''}`}>
-            <aside className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
+        <div className={`dash-layout ${isApplicant ? 'applicant-layout' : isCollapsed ? 'collapsed' : ''}`}>
+            {isApplicant && (
+                <div className={`applicant-drawer-overlay ${isMobileMenuOpen ? 'open' : ''}`} onClick={() => setIsMobileMenuOpen(false)}></div>
+            )}
+            <aside className={`sidebar ${isCollapsed && !isApplicant ? 'collapsed' : ''} ${isApplicant && isMobileMenuOpen ? 'open' : ''}`}>
                 <div className="sidebar-top">
-                    <Link className="brand" to="/">
+                    <Link className="brand" to="/" onClick={() => isApplicant && setIsMobileMenuOpen(false)}>
                         <span className="brand-mark"><img src="/assets/jlogo.png" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></span>
                         <span>Recruitment</span>
                     </Link>
                     <div className="sidebar-actions">
-                        <button className="collapse-toggle" type="button" onClick={() => setIsCollapsed(!isCollapsed)} aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}>
-                            {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
-                        </button>
+                        {!isApplicant && (
+                            <button className="collapse-toggle" type="button" onClick={() => setIsCollapsed(!isCollapsed)} aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}>
+                                {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+                            </button>
+                        )}
+                        {isApplicant && (
+                            <button className="btn icon" onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#fff', border: 'none' }}>
+                                <X size={20} />
+                            </button>
+                        )}
                     </div>
                 </div>
-                {!isCollapsed && primaryRole !== 'applicant' && <div className="role-chip">{roleLabels[primaryRole] || 'Portal User'}</div>}
+                {!isCollapsed && !isApplicant && <div className="role-chip">{roleLabels[primaryRole] || 'Portal User'}</div>}
                 <nav className="side-nav">
                     {visibleNav.map(({ path, label, icon: Icon }) => (
-                        <NavLink className="side-link" to={path} key={path} data-tooltip={label}>
+                        <NavLink className="side-link" to={path} key={path} data-tooltip={label} onClick={() => isApplicant && setIsMobileMenuOpen(false)}>
                             <div className="side-link-icon">
                                 <Icon size={18} />
                                 {label === 'Tracking' && hasTrackingUpdate && <span className="notification-dot" />}
@@ -614,7 +627,14 @@ function DashboardShell({ children }) {
             </aside>
             <main className="main">
                 <div className="main-head">
-                    <div><strong>{user.name}</strong><div className="muted">{user.roles?.map((r) => r.label).join(', ')}</div></div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                        {isApplicant && (
+                            <button className="applicant-menu-btn" onClick={() => setIsMobileMenuOpen(true)}>
+                                <Menu size={22} />
+                            </button>
+                        )}
+                        <div><strong>{user.name}</strong><div className="muted">{user.roles?.map((r) => r.label).join(', ')}</div></div>
+                    </div>
                     <div className="header-actions">
                         <PassportAvatar user={user} initials={initials} />
                         <button className="btn" onClick={logout}><LogOut size={18} /> Logout</button>
